@@ -23,6 +23,16 @@ public class MultiplyTest
         
         Assert.Equal(0, result);
     }
+    
+    [Fact]
+    public void Multiply_ByOne()
+    {
+
+        var multiply = new Multiply(3,1);
+        var result = multiply.process();
+        
+        Assert.Equal(3, result);
+    }
 }
 
 public class Multiply
@@ -38,6 +48,11 @@ public class Multiply
 
     public int process()
     {
+        if(num1 == 1)
+            return num2;
+        
+        if(num2 == 1)
+            return num1;
         return 0;
     }
 }
