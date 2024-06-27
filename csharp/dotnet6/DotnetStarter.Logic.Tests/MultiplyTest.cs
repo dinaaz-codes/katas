@@ -48,11 +48,16 @@ public class Multiply
 
     public int process()
     {
-        if(num1 == 1)
+        if(IsNumberOne(num1))
             return num2;
         
-        if(num2 == 1)
+        if(IsNumberOne(num2))
             return num1;
         return 0;
+    }
+
+    private static bool IsNumberOne(int num)
+    {
+        return num == 1;
     }
 }
