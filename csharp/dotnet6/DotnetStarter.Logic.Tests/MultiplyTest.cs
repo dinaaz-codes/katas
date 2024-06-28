@@ -64,12 +64,17 @@ public class Multiply
             return num1;
 
         var result = 0;
-        for (int i = 0; i < num1; i++)
+        for (int i = 0; IsLessThan(i); i++)
         {
             result += num2;
         }
 
         return result;
+    }
+
+    private bool IsLessThan(int i)
+    {
+        return i < num1;
     }
 
     private static bool IsNumberOne(int num)
