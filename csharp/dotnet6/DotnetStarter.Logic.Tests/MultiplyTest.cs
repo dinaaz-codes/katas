@@ -41,7 +41,7 @@ public class MultiplyTest
         var multiply = new Multiply(3, 4);
         var result = multiply.process();
 
-        Assert.Equal(result, 12);
+        Assert.Equal( 12,result);
     }
     
     [Fact]
@@ -50,7 +50,7 @@ public class MultiplyTest
         var multiply = new Multiply(-3, 4);
         var result = multiply.process();
 
-        Assert.Equal(result, -12);
+        Assert.Equal( -12,result);
     }
     [Fact]
     public void Multiply_ByNum2AsNegative()
