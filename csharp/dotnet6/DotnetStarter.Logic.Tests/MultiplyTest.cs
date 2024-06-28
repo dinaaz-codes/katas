@@ -4,9 +4,9 @@ namespace DotnetStarter.Logic.Tests;
 
 /**
  * Test class for Multiply
- * 1) two positive numbers multiplication
  * 2) multiply by 0
  * 3) multiply by 1
+ * 1) two positive numbers multiplication
  * 4) multiply by negative number
  * 5) one positive and one negative number multiplication
  * 6) two negative numbers multiplication
@@ -33,6 +33,15 @@ public class MultiplyTest
         
         Assert.Equal(3, result);
     }
+
+    [Fact]
+    public void Multiply_TwoPositives()
+    {
+        var multiply = new Multiply(3, 4);
+        var result = multiply.process();
+
+        Assert.Equal(result, 12);
+    }
 }
 
 public class Multiply
@@ -53,7 +62,14 @@ public class Multiply
         
         if(IsNumberOne(num2))
             return num1;
-        return 0;
+
+        var result = 0;
+        for (int i = 0; i < num1; i++)
+        {
+            result += num2;
+        }
+
+        return result;
     }
 
     private static bool IsNumberOne(int num)
