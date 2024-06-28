@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace DotnetStarter.Logic.Tests;
@@ -42,6 +43,15 @@ public class MultiplyTest
 
         Assert.Equal(result, 12);
     }
+    
+    [Fact]
+    public void Multiply_ByNegative()
+    {
+        var multiply = new Multiply(-3, 4);
+        var result = multiply.process();
+
+        Assert.Equal(result, -12);
+    }
 }
 
 public class Multiply
@@ -64,12 +74,15 @@ public class Multiply
             return num1;
 
         var result = 0;
-        for (int i = 0; i < num1; i++)
+        for (int i = 0; i < Math.Abs(num1); i++)
         {
             result += num2;
         }
-
-        return result;
+        
+        if(num1 < 0 && num2 >0 || num1 > 0 && num2 < 0)
+            return -result;
+        
+        return result;  
     }
 
     private static bool IsNumberOne(int num)
