@@ -52,6 +52,15 @@ public class MultiplyTest
 
         Assert.Equal(result, -12);
     }
+    
+    [Fact]
+    public void Multiply_TwoNegatives()
+    {
+        var multiply = new Multiply(-3, -4);
+        var result = multiply.process();
+
+        Assert.Equal(result, -12);
+    }
 }
 
 public class Multiply
