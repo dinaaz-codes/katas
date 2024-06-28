@@ -102,11 +102,6 @@ public class Multiply
         return result;  
     }
 
-    private int AbsNew(int num)
-    {
-        return Math.Abs(num);
-    }
-
     private int Abs(int num)
     {
         return Math.Abs(num);
