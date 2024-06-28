@@ -52,14 +52,22 @@ public class MultiplyTest
 
         Assert.Equal(result, -12);
     }
+    [Fact]
+    public void Multiply_ByNum2AsNegative()
+    {
+        var multiply = new Multiply(3, -4);
+        var result = multiply.process();
+
+        Assert.Equal( -12,result);
+    }
     
     [Fact]
     public void Multiply_TwoNegatives()
     {
-        var multiply = new Multiply(-3, -4);
+        var multiply = new Multiply(-3, -5);
         var result = multiply.process();
 
-        Assert.Equal(result, -12);
+        Assert.Equal( 15,result);
     }
 }
 
@@ -85,7 +93,7 @@ public class Multiply
         var result = 0;
         for (int i = 0; i < Math.Abs(num1); i++)
         {
-            result += num2;
+            result += Math.Abs(num2);
         }
         
         if(num1 < 0 && num2 >0 || num1 > 0 && num2 < 0)
