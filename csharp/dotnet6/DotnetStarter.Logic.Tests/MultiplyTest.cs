@@ -91,7 +91,7 @@ public class Multiply
             return num1;
 
         var result = 0;
-        for (int i = 0; i < Math.Abs(num1); i++)
+        for (int i = 0; i < Abs(); i++)
         {
             result += Math.Abs(num2);
         }
@@ -100,6 +100,11 @@ public class Multiply
             return -result;
         
         return result;  
+    }
+
+    private int Abs()
+    {
+        return Math.Abs(num1);
     }
 
     private static bool IsNumberOne(int num)
