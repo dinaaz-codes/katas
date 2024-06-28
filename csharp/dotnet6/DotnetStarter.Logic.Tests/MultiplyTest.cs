@@ -93,13 +93,18 @@ public class Multiply
         var result = 0;
         for (int i = 0; i < Abs(num1); i++)
         {
-            result += Math.Abs(num2);
+            result += Abs();
         }
         
         if(num1 < 0 && num2 >0 || num1 > 0 && num2 < 0)
             return -result;
         
         return result;  
+    }
+
+    private int Abs()
+    {
+        return Math.Abs(num2);
     }
 
     private int Abs(int num)
