@@ -45,7 +45,7 @@ public class MultiplyTest
     }
     
     [Fact]
-    public void Multiply_ByNegative()
+    public void Multiply_ByNum1AsNegative()
     {
         var multiply = new Multiply(-3, 4);
         var result = multiply.process();
