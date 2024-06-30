@@ -98,7 +98,7 @@ public class Multiply
             result += new Number(num2).Abs();
         }
         
-        if(number1.LessThanZero() && num2 >0 || num1 > 0 && num2 < 0)
+        if(number1.LessThanZero() && new Number(num2).GreaterThanZero() || new Number(num1).GreaterThanZero() && num2 < 0)
             return -result;
         
         return result;  
@@ -127,5 +127,15 @@ public class Number
     public bool LessThanZero()
     {
         return _num1 < 0;
+    }
+
+    public bool GreaterThanZero()
+    {
+        return _num1 > 0;
+    }
+
+    public bool GreaterThanZeroNew()
+    {
+        return _num1 > 0;
     }
 }
