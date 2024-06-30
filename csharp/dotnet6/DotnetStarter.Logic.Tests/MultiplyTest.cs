@@ -137,6 +137,6 @@ public class Number
 
     public void Add(Number number2)
     {
-        num = num + number2.Abs();
+        num += number2.Abs();
     }
 }
