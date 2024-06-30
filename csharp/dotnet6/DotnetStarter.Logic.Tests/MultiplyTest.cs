@@ -99,10 +99,15 @@ public class Multiply
             result.Add(number2);
         }
         
-        if(number1.IsNegative() && number2.IsPositive() || number1.IsPositive() && number2.IsNegative())
+        if(HasOppositeSigns(number1, number2))
             return -result.num;
         
         return result.num;  
+    }
+
+    private static bool HasOppositeSigns(Number number1, Number number2)
+    {
+        return number1.IsNegative() && number2.IsPositive() || number1.IsPositive() && number2.IsNegative();
     }
 }
 
