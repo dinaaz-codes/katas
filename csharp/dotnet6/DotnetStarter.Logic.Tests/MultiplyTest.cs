@@ -86,11 +86,11 @@ public class Multiply
     public int process()
     {
         var number1 = new Number(num1);
-        if(number1.IsNumberOne())
+        if(number1.IsOne())
             return num2;
 
         var number2 = new Number(num2);
-        if(number2.IsNumberOne())
+        if(number2.IsOne())
             return num1;
 
         var result = 0;
@@ -115,7 +115,7 @@ public class Number
         this.num = num;
     }
 
-    public bool IsNumberOne()
+    public bool IsOne()
     {
         return num == 1;
     }
