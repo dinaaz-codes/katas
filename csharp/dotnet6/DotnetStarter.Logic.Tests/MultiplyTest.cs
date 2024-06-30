@@ -135,9 +135,8 @@ public class Number
         return num > 0;
     }
 
-    public int Add(Number number2)
+    public void Add(Number number2)
     {
         num = num + number2.Abs();
-        return num;
     }
 }
