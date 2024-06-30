@@ -94,7 +94,8 @@ public class Multiply
             return num1;
 
         var result = new Number(0);
-        for (int i = 0; i < number1.Abs(); i++)
+        int i = 0;
+        for (; i < number1.Abs(); i++)
         {
             result.Add(number2);
         }
