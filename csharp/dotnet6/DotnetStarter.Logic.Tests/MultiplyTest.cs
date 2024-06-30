@@ -98,15 +98,15 @@ public class Multiply
             result += new Number(num2).Abs();
         }
         
-        if(lessThanZero(num1) && num2 >0 || num1 > 0 && num2 < 0)
+        if(lessThanZero(new Number(num1)) && num2 >0 || num1 > 0 && num2 < 0)
             return -result;
         
         return result;  
     }
 
-    private bool lessThanZero(int number)
+    private bool lessThanZero(Number numberObj)
     {
-        return number < 0;
+        return numberObj._num1 < 0;
     }
 }
 
