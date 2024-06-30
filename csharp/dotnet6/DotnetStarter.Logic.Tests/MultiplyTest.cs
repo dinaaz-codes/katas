@@ -93,22 +93,22 @@ public class Multiply
         if(number2.IsOne())
             return num1;
 
-        var result = 0;
+        var number = new Number(0);
         for (int i = 0; i < number1.Abs(); i++)
         {
-            result += number2.Abs();
+            number.num = number.Add(number2);
         }
         
         if(number1.LessThanZero() && number2.GreaterThanZero() || number1.GreaterThanZero() && number2.LessThanZero())
-            return -result;
+            return -number.num;
         
-        return result;  
+        return number.num;  
     }
 }
 
 public class Number
 {
-    public readonly int num;
+    public int num;
 
     public Number(int num)
     {
@@ -133,5 +133,11 @@ public class Number
     public bool GreaterThanZero()
     {
         return num > 0;
+    }
+
+    public int Add(Number number2)
+    {
+        num = num + number2.Abs();
+        return num;
     }
 }
