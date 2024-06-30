@@ -95,7 +95,7 @@ public class Multiply
 
         var result = new Number(0);
         var counter = new Number(0);
-        for (; counter.LessThan(number1); counter.num++)
+        for (; counter.LessThan(number1); counter.Increment())
         {
             result.Add(number2);
         }
@@ -149,5 +149,10 @@ public class Number
     public bool LessThan(Number number1)
     {
         return num < number1.Abs();
+    }
+
+    public int Increment()
+    {
+        return num++;
     }
 }
