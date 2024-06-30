@@ -99,7 +99,7 @@ public class Multiply
             result += number2.Abs();
         }
         
-        if(number1.LessThanZero() && number2.GreaterThanZero() || new Number(num1).GreaterThanZero() && number2.LessThanZero())
+        if(number1.LessThanZero() && number2.GreaterThanZero() || number1.GreaterThanZero() && number2.LessThanZero())
             return -result;
         
         return result;  
