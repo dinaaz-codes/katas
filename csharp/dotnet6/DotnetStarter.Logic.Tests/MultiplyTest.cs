@@ -107,30 +107,30 @@ public class Multiply
 
 public class Number
 {
-    public readonly int _num1;
+    public readonly int num;
 
-    public Number(int num1)
+    public Number(int num)
     {
-        _num1 = num1;
+        this.num = num;
     }
 
     public bool IsNumberOne()
     {
-        return _num1 == 1;
+        return num == 1;
     }
 
     public int Abs()
     {
-        return Math.Abs(_num1);
+        return Math.Abs(num);
     }
 
     public bool LessThanZero()
     {
-        return _num1 < 0;
+        return num < 0;
     }
 
     public bool GreaterThanZero()
     {
-        return _num1 > 0;
+        return num > 0;
     }
 }
