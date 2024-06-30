@@ -92,20 +92,15 @@ public class Multiply
             return num1;
 
         var result = 0;
-        for (int i = 0; i < Abs(new Number(num1)); i++)
+        for (int i = 0; i < new Number(num1).Abs(); i++)
         {
-            result += Abs(new Number(num2));
+            result += new Number(num2).Abs();
         }
         
         if(num1 < 0 && num2 >0 || num1 > 0 && num2 < 0)
             return -result;
         
         return result;  
-    }
-
-    private int Abs(Number number)
-    {
-        return Math.Abs(number._num1);
     }
 }
 
@@ -121,5 +116,10 @@ public class Number
     public bool IsNumberOne()
     {
         return _num1 == 1;
+    }
+
+    public int Abs()
+    {
+        return Math.Abs(_num1);
     }
 }
