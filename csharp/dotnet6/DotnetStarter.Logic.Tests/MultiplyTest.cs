@@ -96,7 +96,7 @@ public class Multiply
         var result = new Number(0);
         for (int i = 0; i < number1.Abs(); i++)
         {
-            result.num = result.Add(number2);
+            result.Add(number2);
         }
         
         if(number1.LessThanZero() && number2.GreaterThanZero() || number1.GreaterThanZero() && number2.LessThanZero())
