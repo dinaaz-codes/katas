@@ -85,14 +85,15 @@ public class Multiply
 
     public int process()
     {
-        if(new Number(num1).IsNumberOne())
+        var number1 = new Number(num1);
+        if(number1.IsNumberOne())
             return num2;
         
         if(new Number(num2).IsNumberOne())
             return num1;
 
         var result = 0;
-        for (int i = 0; i < new Number(num1).Abs(); i++)
+        for (int i = 0; i < number1.Abs(); i++)
         {
             result += new Number(num2).Abs();
         }
