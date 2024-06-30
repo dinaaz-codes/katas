@@ -151,8 +151,8 @@ public class Number
         return num < number1.Abs();
     }
 
-    public int Increment()
+    public void Increment()
     {
-        return num++;
+        num++;
     }
 }
