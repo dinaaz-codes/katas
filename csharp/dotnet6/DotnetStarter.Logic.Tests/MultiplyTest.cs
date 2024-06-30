@@ -133,9 +133,4 @@ public class Number
     {
         return _num1 > 0;
     }
-
-    public bool GreaterThanZeroNew()
-    {
-        return _num1 > 0;
-    }
 }
