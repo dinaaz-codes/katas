@@ -99,7 +99,7 @@ public class Multiply
             result.Add(number2);
         }
         
-        if(number1.IsNegative() && number2.GreaterThanZero() || number1.GreaterThanZero() && number2.IsNegative())
+        if(number1.IsNegative() && number2.IsPositive() || number1.IsPositive() && number2.IsNegative())
             return -result.num;
         
         return result.num;  
@@ -130,7 +130,7 @@ public class Number
         return num < 0;
     }
 
-    public bool GreaterThanZero()
+    public bool IsPositive()
     {
         return num > 0;
     }
