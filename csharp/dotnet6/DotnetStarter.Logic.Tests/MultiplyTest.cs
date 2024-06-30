@@ -98,15 +98,10 @@ public class Multiply
             result += new Number(num2).Abs();
         }
         
-        if(LessThanZero(new Number(num1)) && num2 >0 || num1 > 0 && num2 < 0)
+        if(new Number(num1).LessThanZero() && num2 >0 || num1 > 0 && num2 < 0)
             return -result;
         
         return result;  
-    }
-
-    private static bool LessThanZero(Number number)
-    {
-        return number._num1 < 0;
     }
 }
 
@@ -127,5 +122,10 @@ public class Number
     public int Abs()
     {
         return Math.Abs(_num1);
+    }
+
+    public bool LessThanZero()
+    {
+        return _num1 < 0;
     }
 }
