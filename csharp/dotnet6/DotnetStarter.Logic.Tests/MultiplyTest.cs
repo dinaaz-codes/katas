@@ -21,7 +21,7 @@ public class MultiplyTest
     {
 
         var multiply = new Multiply(0,3);
-        var result = multiply.process();
+        var result = multiply.Process();
         
         Assert.Equal(0, result);
     }
@@ -31,7 +31,7 @@ public class MultiplyTest
     {
 
         var multiply = new Multiply(3,1);
-        var result = multiply.process();
+        var result = multiply.Process();
         
         Assert.Equal(3, result);
     }
@@ -40,7 +40,7 @@ public class MultiplyTest
     public void Multiply_TwoPositives()
     {
         var multiply = new Multiply(3, 4);
-        var result = multiply.process();
+        var result = multiply.Process();
 
         Assert.Equal( 12,result);
     }
@@ -49,7 +49,7 @@ public class MultiplyTest
     public void Multiply_ByNum1AsNegative()
     {
         var multiply = new Multiply(-3, 4);
-        var result = multiply.process();
+        var result = multiply.Process();
 
         Assert.Equal( -12,result);
     }
@@ -57,7 +57,7 @@ public class MultiplyTest
     public void Multiply_ByNum2AsNegative()
     {
         var multiply = new Multiply(3, -4);
-        var result = multiply.process();
+        var result = multiply.Process();
 
         Assert.Equal( -12,result);
     }
@@ -66,7 +66,7 @@ public class MultiplyTest
     public void Multiply_TwoNegatives()
     {
         var multiply = new Multiply(-3, -5);
-        var result = multiply.process();
+        var result = multiply.Process();
 
         Assert.Equal( 15,result);
     }
@@ -83,7 +83,7 @@ public class Multiply
         this.num2 = num2;
     }
 
-    public int process()
+    public int Process()
     {
         var number1 = new Number(num1);
         if(number1.IsOne())
