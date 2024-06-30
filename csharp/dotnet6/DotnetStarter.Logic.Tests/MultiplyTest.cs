@@ -104,9 +104,9 @@ public class Multiply
         return result;  
     }
 
-    private bool lessThanZero(Number numberObj)
+    private bool lessThanZero(Number number)
     {
-        return numberObj._num1 < 0;
+        return number._num1 < 0;
     }
 }
 
