@@ -88,17 +88,18 @@ public class Multiply
         var number1 = new Number(num1);
         if(number1.IsNumberOne())
             return num2;
-        
-        if(new Number(num2).IsNumberOne())
+
+        var number2 = new Number(num2);
+        if(number2.IsNumberOne())
             return num1;
 
         var result = 0;
         for (int i = 0; i < number1.Abs(); i++)
         {
-            result += new Number(num2).Abs();
+            result += number2.Abs();
         }
         
-        if(number1.LessThanZero() && new Number(num2).GreaterThanZero() || new Number(num1).GreaterThanZero() && new Number(num2).LessThanZero())
+        if(number1.LessThanZero() && number2.GreaterThanZero() || new Number(num1).GreaterThanZero() && number2.LessThanZero())
             return -result;
         
         return result;  
