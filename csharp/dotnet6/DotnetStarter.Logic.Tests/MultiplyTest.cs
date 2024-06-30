@@ -92,9 +92,9 @@ public class Multiply
             return num1;
 
         var result = 0;
-        for (int i = 0; i < Abs(num1, new Number(num1)); i++)
+        for (int i = 0; i < Abs(new Number(num1)); i++)
         {
-            result += Abs(num2, new Number(num2));
+            result += Abs(new Number(num2));
         }
         
         if(num1 < 0 && num2 >0 || num1 > 0 && num2 < 0)
@@ -103,7 +103,7 @@ public class Multiply
         return result;  
     }
 
-    private int Abs(int num, Number number)
+    private int Abs(Number number)
     {
         return Math.Abs(number._num1);
     }
