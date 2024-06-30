@@ -93,16 +93,16 @@ public class Multiply
         if(number2.IsOne())
             return num1;
 
-        var number = new Number(0);
+        var result = new Number(0);
         for (int i = 0; i < number1.Abs(); i++)
         {
-            number.num = number.Add(number2);
+            result.num = result.Add(number2);
         }
         
         if(number1.LessThanZero() && number2.GreaterThanZero() || number1.GreaterThanZero() && number2.LessThanZero())
-            return -number.num;
+            return -result.num;
         
-        return number.num;  
+        return result.num;  
     }
 }
 
