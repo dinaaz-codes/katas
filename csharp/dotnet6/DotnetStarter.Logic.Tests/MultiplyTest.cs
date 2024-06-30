@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using Xunit;
 
 namespace DotnetStarter.Logic.Tests;
@@ -84,16 +85,16 @@ public class Multiply
 
     public int process()
     {
-        if(IsNumberOne(num1))
+        if(new Number(num1).IsNumberOne())
             return num2;
         
-        if(IsNumberOne(num2))
+        if(new Number(num2).IsNumberOne())
             return num1;
 
         var result = 0;
-        for (int i = 0; i < Abs(num1); i++)
+        for (int i = 0; i < Abs(num1, new Number(num1)); i++)
         {
-            result += Abs(num2);
+            result += Abs(num2, new Number(num2));
         }
         
         if(num1 < 0 && num2 >0 || num1 > 0 && num2 < 0)
@@ -102,13 +103,23 @@ public class Multiply
         return result;  
     }
 
-    private int Abs(int num)
+    private int Abs(int num, Number number)
     {
-        return Math.Abs(num);
+        return Math.Abs(number._num1);
+    }
+}
+
+public class Number
+{
+    public readonly int _num1;
+
+    public Number(int num1)
+    {
+        _num1 = num1;
     }
 
-    private static bool IsNumberOne(int num)
+    public bool IsNumberOne()
     {
-        return num == 1;
+        return _num1 == 1;
     }
 }
