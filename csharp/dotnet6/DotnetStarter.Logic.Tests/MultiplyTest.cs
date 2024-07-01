@@ -90,10 +90,7 @@ public class Multiply
 
         var result = number1.AddUntil(number2);
 
-        if(number1.HasOppositeSign(number2))
-            return new NegativeNumber(result.AsInt()).AsInt();
-        
-        return result.AsInt();  
+        return number1.HasOppositeSign(number2) ? new NegativeNumber(result.AsInt()).AsInt() : result.AsInt();
     }
 }
 
