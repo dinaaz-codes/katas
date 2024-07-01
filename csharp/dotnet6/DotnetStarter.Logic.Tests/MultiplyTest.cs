@@ -175,10 +175,7 @@ public class Number
         return num;
     }
 
-    public bool HasOppositeSign(Number number2)
-    {
-        return IsNegative() && number2.IsPositive() || IsPositive() && number2.IsNegative();
-    }
+    public bool HasOppositeSign(Number number2) => IsNegative() && number2.IsPositive() || IsPositive() && number2.IsNegative();
 }
 
 public record NegativeNumber
