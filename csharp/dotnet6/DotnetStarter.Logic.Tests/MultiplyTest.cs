@@ -72,6 +72,26 @@ public class MultiplyTest
     }
 }
 
+public class NegativeNumberTest
+{
+    [Fact]
+    public void ShouldReturnNegativeNumber_OnPositiveInt()
+    {
+        var negativeNumber = new NegativeNumber(3);
+        var result = negativeNumber.AsInt();
+
+        Assert.Equal(-3, result);
+    }
+
+    [Fact]
+    public void ShouldReturnNegative_OnNegativeInt()
+    {
+            var negativeNumber = new NegativeNumber(-3);
+            
+            Assert.Equal(-3, negativeNumber.AsInt());
+    }
+}
+
 public class Multiply
 {
     private readonly int num1;
@@ -90,7 +110,8 @@ public class Multiply
 
         var result = number1.AddUntil(number2);
 
-        return number1.HasOppositeSign(number2) ? new NegativeNumber(result.AsInt()).AsInt() : result.AsInt();
+        var resultAsInt = result.AsInt();
+        return number1.HasOppositeSign(number2) ? new NegativeNumber(resultAsInt).AsInt() : resultAsInt;
     }
 }
 
@@ -165,7 +186,10 @@ public record NegativeNumber
 {
     public NegativeNumber(int Number)
     {
-        this.Number = -Number;
+        if(Number < 0)
+            this.Number = Number;
+        else
+            this.Number = -Number;
     }
 
     private int Number { get; }
