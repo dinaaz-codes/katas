@@ -110,12 +110,7 @@ public class Multiply
 
         var result = number1.AddUntil(number2);
 
-        return number1.HasOppositeSign(number2) ? AsNegative(result) : result.AsInt();
-    }
-
-    private static int AsNegative(Number number)
-    {
-        return new NegativeNumber(number.AsInt()).AsInt();
+        return number1.HasOppositeSign(number2) ? new NegativeNumber(result.AsInt()).AsInt() : result.AsInt();
     }
 }
 
