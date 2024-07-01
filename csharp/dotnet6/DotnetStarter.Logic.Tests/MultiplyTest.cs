@@ -111,12 +111,12 @@ public class Number
         return Math.Abs(num);
     }
 
-    public bool IsNegative()
+    private bool IsNegative()
     {
         return num < 0;
     }
 
-    public bool IsPositive()
+    private bool IsPositive()
     {
         return num > 0;
     }
