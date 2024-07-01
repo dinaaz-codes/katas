@@ -86,35 +86,20 @@ public class Multiply
     public int Process()
     {
         var number1 = new Number(num1);
-        if(number1.IsOne())
-            return num2;
-
         var number2 = new Number(num2);
-        if(number2.IsOne())
-            return num1;
 
-        var result = new Number(0);
-        var counter = new Number(0);
-        for (; counter.LessThan(number1); counter.Increment())
-        {
-            result.Add(number2);
-        }
-        
-        if(HasOppositeSigns(number1, number2))
-            return -result.num;
-        
-        return result.num;  
-    }
+        var result = number1.AddUntil(number2);
 
-    private static bool HasOppositeSigns(Number number1, Number number2)
-    {
-        return number1.IsNegative() && number2.IsPositive() || number1.IsPositive() && number2.IsNegative();
+        if(number1.IsNegative() && number2.IsPositive() || number1.IsPositive() && number2.IsNegative())
+            return new NegativeNumber(result.AsInt()).AsInt();
+        
+        return result.AsInt();  
     }
 }
 
 public class Number
 {
-    public int num;
+    private int num;
 
     public Number(int num)
     {
@@ -126,7 +111,7 @@ public class Number
         return num == 1;
     }
 
-    public int Abs()
+    private int Abs()
     {
         return Math.Abs(num);
     }
@@ -141,18 +126,55 @@ public class Number
         return num > 0;
     }
 
-    public void Add(Number number2)
+    private void Add(Number number2)
     {
         num += number2.Abs();
     }
 
-    public bool LessThan(Number number1)
+    private bool LessThan(Number number1)
     {
         return num < number1.Abs();
     }
 
-    public void Increment()
+    private void Increment()
     {
         num++;
+    }
+
+    public Number AddUntil(Number number2)
+    {
+        var result = Zero();
+        var counter = Zero();
+        for (; counter.LessThan(this); counter.Increment())
+        {
+            result.Add(number2);
+        }
+
+        return result;
+    }
+
+    private static Number Zero()
+    {
+        return new Number(0);
+    }
+
+    public int AsInt()
+    {
+        return num;
+    }
+}
+
+public record NegativeNumber
+{
+    public NegativeNumber(int Number)
+    {
+        this.Number = -Number;
+    }
+
+    private int Number { get; init; }
+
+    public int AsInt()
+    {
+        return Number;
     }
 }
