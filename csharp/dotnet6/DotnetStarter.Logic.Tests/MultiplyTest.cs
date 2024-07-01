@@ -90,7 +90,7 @@ public class Multiply
 
         var result = number1.AddUntil(number2);
 
-        if(number1.IsNegative() && number2.IsPositive() || number1.IsPositive() && number2.IsNegative())
+        if(number1.HasOppositeSign(number2))
             return new NegativeNumber(result.AsInt()).AsInt();
         
         return result.AsInt();  
@@ -162,6 +162,11 @@ public class Number
     {
         return num;
     }
+
+    public bool HasOppositeSign(Number number2)
+    {
+        return IsNegative() && number2.IsPositive() || IsPositive() && number2.IsNegative();
+    }
 }
 
 public record NegativeNumber
@@ -171,7 +176,7 @@ public record NegativeNumber
         this.Number = -Number;
     }
 
-    private int Number { get; init; }
+    private int Number { get; }
 
     public int AsInt()
     {
