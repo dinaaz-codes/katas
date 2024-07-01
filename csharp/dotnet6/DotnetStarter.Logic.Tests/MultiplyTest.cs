@@ -106,11 +106,6 @@ public class Number
         this.num = num;
     }
 
-    public bool IsOne()
-    {
-        return num == 1;
-    }
-
     private int Abs()
     {
         return Math.Abs(num);
