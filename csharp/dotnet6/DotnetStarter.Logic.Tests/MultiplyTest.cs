@@ -111,7 +111,12 @@ public class Multiply
         var result = number1.AddUntil(number2);
 
         var resultAsInt = result.AsInt();
-        return number1.HasOppositeSign(number2) ? new NegativeNumber(resultAsInt).AsInt() : resultAsInt;
+        return number1.HasOppositeSign(number2) ? AsNegative(resultAsInt) : resultAsInt;
+    }
+
+    private static int AsNegative(int resultAsInt)
+    {
+        return new NegativeNumber(resultAsInt).AsInt();
     }
 }
 
