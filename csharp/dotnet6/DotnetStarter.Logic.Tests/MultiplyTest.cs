@@ -193,8 +193,5 @@ public record NegativeNumber
 
     private int Number { get; }
 
-    public int AsInt()
-    {
-        return Number;
-    }
+    public int AsInt() => Number;
 }
