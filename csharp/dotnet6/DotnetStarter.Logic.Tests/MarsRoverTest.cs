@@ -59,7 +59,7 @@ public class MarsRover
         return  new Position(x, y);
     }
 
-    public object GetDirection()
+    public Direction GetDirection()
     {
         return direction;
     }
