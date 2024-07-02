@@ -24,7 +24,7 @@ public class MarsRoverTest
     public void ShouldGetCurrentMarsRoversPosition()
     {
         var marsRover = new MarsRover(1, 2, Direction.North);
-        var position = marsRover.GetPosition();
+        var position = marsRover.CurrentPosition();
         Assert.NotNull(position);
         Assert.Equal(1,position.x);
         Assert.Equal(2,position.y);
@@ -52,7 +52,7 @@ public class MarsRover
         this.direction = direction;
     }
 
-    public Position GetPosition() => new(x, y);
+    public Position CurrentPosition() => new(x, y);
 
     public Direction GetDirection() => direction;
 }
