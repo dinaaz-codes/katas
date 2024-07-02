@@ -124,16 +124,6 @@ public class MarsRoverTest
         var nowFacing = marsRover.CurrentDirection();
         Assert.Equal(expectedDirection,nowFacing);
     }
-    [Fact]
-    public void ShouldTurnMarsRoverLeft_OnFacingSouth()
-    {
-        var marsRover = new MarsRover(1, 2, Direction.South);
-        marsRover.TurnLeft();
-
-        var currentDirection = marsRover.CurrentDirection();
-        Assert.Equal(Direction.East,currentDirection);
-    }
-    
 }
 
 public class MarsRover
