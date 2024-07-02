@@ -34,7 +34,7 @@ public class MarsRoverTest
     public void ShouldReturnMarsRoversDirection()
     {
         // Arrange
-        var marsRover = new MarsRover(1, 2, 'N');
+        var marsRover = new MarsRover(1, 2, Direction.North);
         var direction = marsRover.GetDirection();
         Assert.Equal(Direction.North,direction);
     }
@@ -53,6 +53,13 @@ public class MarsRover
         this.x = x;
         this.y = y;
         this.direction = (Direction)direction;
+    }
+
+    public MarsRover(int x, int y, Direction direction)
+    {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
     }
 
     public Position GetPosition()
