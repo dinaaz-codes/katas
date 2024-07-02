@@ -148,10 +148,7 @@ public class Number
         return num < number1.Abs();
     }
 
-    private void Increment()
-    {
-        num++;
-    }
+    private void Increment() => num++;
 
     public Number AddUntil(Number number2)
     {
