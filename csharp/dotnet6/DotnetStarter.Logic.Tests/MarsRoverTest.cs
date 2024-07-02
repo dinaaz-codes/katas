@@ -6,7 +6,10 @@ namespace DotnetStarter.Logic.Tests;
  * ShouldInitializeMarsRoverPosition
  * ShouldGetCurrentMarsRoversPosition
  * ShouldReturnMarsRoverDirection
- * ShouldReturnMarsRoverMove
+ * ShouldMoveMarsRoverForward
+ * ShouldMoveMarsRoverBackward
+ * ShouldMoveMarsRoverLeft
+ * ShouldMoveMarsRoverRight
  */
 public class MarsRoverTest
 {
@@ -37,6 +40,16 @@ public class MarsRoverTest
         var direction = marsRover.CurrentDirection();
         Assert.Equal(Direction.North,direction);
     }
+    
+    [Fact]
+    public void ShouldMoveMarsRoverForward()
+    {
+        var marsRover = new MarsRover(1, 2, Direction.North);
+        marsRover.MoveForward();
+
+        var currentPosition = marsRover.CurrentPosition();
+        Assert.Equal(3,currentPosition.y);
+    }
 }
 
 public class MarsRover
@@ -55,6 +68,14 @@ public class MarsRover
     public Position CurrentPosition() => new(x, y);
 
     public Direction CurrentDirection() => direction;
+
+    public void MoveForward()
+    {
+        if (direction == Direction.North)
+        {
+            y += 1;
+        }
+    }
 }
 
 public enum Direction
