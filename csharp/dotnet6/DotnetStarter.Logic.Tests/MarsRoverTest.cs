@@ -48,13 +48,6 @@ public class MarsRover
     public int y;
     public Direction direction;
 
-    public MarsRover(int x, int y, char direction)
-    {
-        this.x = x;
-        this.y = y;
-        this.direction = (Direction)direction;
-    }
-
     public MarsRover(int x, int y, Direction direction)
     {
         this.x = x;
