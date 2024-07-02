@@ -64,7 +64,7 @@ public class MarsRover
 
     public object GetDirection()
     {
-        return this.direction;
+        return direction;
     }
 }
 
