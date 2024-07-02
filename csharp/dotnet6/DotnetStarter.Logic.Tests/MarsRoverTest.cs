@@ -28,10 +28,10 @@ public class MarsRover
     public int y;
     public char direction;
 
-    public MarsRover(int i, int i1, char c)
+    public MarsRover(int x, int y, char direction)
     {
-        x = i;
-        y = i1;
-        direction = c;
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
     }
 }
