@@ -118,25 +118,13 @@ public class Number
 {
     private int num;
 
-    public Number(int num)
-    {
-        this.num = num;
-    }
+    public Number(int num) => this.num = num;
 
-    private int Abs()
-    {
-        return Math.Abs(num);
-    }
+    private int Abs() => Math.Abs(num);
 
-    private bool IsNegative()
-    {
-        return num < 0;
-    }
+    private bool IsNegative() => num < 0;
 
-    private bool IsPositive()
-    {
-        return num > 0;
-    }
+    private bool IsPositive() => num > 0;
 
     private void Add(Number number2) => num += number2.Abs();
 
@@ -158,10 +146,7 @@ public class Number
 
     private static Number Zero() => new(0);
 
-    public int AsInt()
-    {
-        return num;
-    }
+    public int AsInt() => num;
 
     public bool HasOppositeSign(Number number2) => IsNegative() && number2.IsPositive() || IsPositive() && number2.IsNegative();
 }
