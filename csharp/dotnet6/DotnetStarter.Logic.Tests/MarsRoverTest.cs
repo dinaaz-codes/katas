@@ -205,7 +205,7 @@ public class MarsRover
         {
             direction = Direction.East;
         }
-        else if (direction == Direction.East)
+        else if (IsEastFacing())
         {
             direction = Direction.North;
         }
