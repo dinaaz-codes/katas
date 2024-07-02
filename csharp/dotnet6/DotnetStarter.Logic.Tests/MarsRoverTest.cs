@@ -145,12 +145,16 @@ public class MarsRover
     public void MoveBackward()
     {
         if (CurrentDirection() == Direction.South)
+        {
             y += 1;
+        }
+
         if (CurrentDirection() == Direction.West)
         {
             x += 1;
         }
-        else
+        
+        if(CurrentDirection() == Direction.North)
         {
             y -= 1;
         }
