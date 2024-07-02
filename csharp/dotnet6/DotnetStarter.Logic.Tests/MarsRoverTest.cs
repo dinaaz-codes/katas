@@ -170,10 +170,15 @@ public class MarsRover
             y -= 1;
         }
 
-        if (direction == Direction.East)
+        if (IsEastFacing())
         {
             x -= 1;
         }
+    }
+
+    private bool IsEastFacing()
+    {
+        return direction == Direction.East;
     }
 
     private bool IsSouthFacing()
