@@ -13,7 +13,7 @@ public class MarsRoverTest
     [Fact]
     public void ShouldInitializeMarsRoverPosition()
     {
-        var marsRover = new MarsRover(1, 2, 'N');
+        var marsRover = new MarsRover(1, 2, Direction.North);
         
         Assert.Equal(1,marsRover.x);
         Assert.Equal(2,marsRover.y);
@@ -23,7 +23,7 @@ public class MarsRoverTest
     [Fact]
     public void ShouldGetCurrentMarsRoversPosition()
     {
-        var marsRover = new MarsRover(1, 2, 'N');
+        var marsRover = new MarsRover(1, 2, Direction.North);
         var position = marsRover.GetPosition();
         Assert.NotNull(position);
         Assert.Equal(1,position.x);
