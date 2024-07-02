@@ -201,7 +201,7 @@ public class MarsRover
 
     public void TurnLeft()
     {
-        if (direction == Direction.South)
+        if (IsSouthFacing())
         {
             direction = Direction.East;
         }
