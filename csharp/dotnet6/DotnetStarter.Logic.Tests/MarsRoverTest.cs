@@ -113,6 +113,16 @@ public class MarsRoverTest
         var currentPosition = marsRover.CurrentPosition();
         Assert.Equal(0,currentPosition.x);
     }
+    [Fact]
+    public void ShouldTurnMarsRoverLeft_OnFacingNorth()
+    {
+        var marsRover = new MarsRover(1, 2, Direction.North);
+        marsRover.TurnLeft();
+
+        var currentDirection = marsRover.CurrentDirection();
+        Assert.Equal(Direction.West,currentDirection);
+    }
+    
 }
 
 public class MarsRover
@@ -184,6 +194,11 @@ public class MarsRover
     private bool IsSouthFacing()
     {
         return direction == Direction.South;
+    }
+
+    public void TurnLeft()
+    {
+        direction = Direction.West;
     }
 }
 
