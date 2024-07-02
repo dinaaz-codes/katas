@@ -12,18 +12,16 @@ namespace DotnetStarter.Logic.Tests;
  */
 public class MarsRoverTest
 {
+    [Fact]
+    public void ShouldMoveForward()
+    {
+        var marsRover = new MarsRover();
 
- [Fact]
- public void ShouldMoveForward()
- {
-     var marsRover = new MarsRover();
+        marsRover.Move(new List<char>['f']);
 
-     marsRover.Move(new List<char>['f']);
-     
-     Assert.Equal(1,marsRover.x);
-    Assert.Equal(0,marsRover.y);
-     
- }
+        Assert.Equal(1, marsRover.x);
+        Assert.Equal(0, marsRover.y);
+    }
 }
 
 public class MarsRover
