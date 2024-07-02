@@ -33,7 +33,6 @@ public class MarsRoverTest
     [Fact]
     public void ShouldReturnMarsRoversDirection()
     {
-        // Arrange
         var marsRover = new MarsRover(1, 2, Direction.North);
         var direction = marsRover.GetDirection();
         Assert.Equal(Direction.North,direction);
