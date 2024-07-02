@@ -150,7 +150,7 @@ public class MarsRover
 
     public void MoveBackward()
     {
-        if (direction == Direction.South)
+        if (IsSouthFacing())
         {
             y += 1;
         }
@@ -171,9 +171,9 @@ public class MarsRover
         }
     }
 
-    private bool IsNorthFacingNew()
+    private bool IsSouthFacing()
     {
-        return direction == Direction.North;
+        return direction == Direction.South;
     }
 }
 
