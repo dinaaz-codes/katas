@@ -113,14 +113,16 @@ public class MarsRoverTest
         var currentPosition = marsRover.CurrentPosition();
         Assert.Equal(0,currentPosition.x);
     }
-    [Fact]
-    public void ShouldTurnMarsRoverLeft_OnFacingNorth()
+    [Theory]
+    [InlineData(Direction.North,Direction.West)]    
+    [InlineData(Direction.South,Direction.East)]
+    public void ShouldTurnMarsRoverLeft_OnFacingNorth( Direction currentDirection,Direction expectedDirection)
     {
-        var marsRover = new MarsRover(1, 2, Direction.North);
+        var marsRover = new MarsRover(1, 2, currentDirection);
         marsRover.TurnLeft();
 
-        var currentDirection = marsRover.CurrentDirection();
-        Assert.Equal(Direction.West,currentDirection);
+        var nowFacing = marsRover.CurrentDirection();
+        Assert.Equal(expectedDirection,nowFacing);
     }
     [Fact]
     public void ShouldTurnMarsRoverLeft_OnFacingSouth()
