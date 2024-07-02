@@ -156,15 +156,9 @@ public class MarsRover
         else if (IsEastFacing()) x += 1;
     }
 
-    private bool IsWestFacing()
-    {
-        return direction == Direction.West;
-    }
+    private bool IsWestFacing() => direction == Direction.West;
 
-    private bool IsNorthFacing()
-    {
-        return direction == Direction.North;
-    }
+    private bool IsNorthFacing() => direction == Direction.North;
 
     public void MoveBackward()
     {
@@ -189,15 +183,9 @@ public class MarsRover
         }
     }
 
-    private bool IsEastFacing()
-    {
-        return direction == Direction.East;
-    }
+    private bool IsEastFacing() => direction == Direction.East;
 
-    private bool IsSouthFacing()
-    {
-        return direction == Direction.South;
-    }
+    private bool IsSouthFacing() => direction == Direction.South;
 
     public void TurnLeft()
     {
