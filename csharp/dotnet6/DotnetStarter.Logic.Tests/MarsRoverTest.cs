@@ -160,7 +160,7 @@ public class MarsRover
             x += 1;
         }
         
-        if(IsNorthFacingNew())
+        if(IsNorthFacing())
         {
             y -= 1;
         }
