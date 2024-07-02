@@ -116,6 +116,8 @@ public class MarsRoverTest
     [Theory]
     [InlineData(Direction.North,Direction.West)]    
     [InlineData(Direction.South,Direction.East)]
+    [InlineData(Direction.West,Direction.South)]
+    [InlineData(Direction.East,Direction.North)]
     public void ShouldTurnMarsRoverLeft( Direction currentDirection,Direction expectedDirection)
     {
         var marsRover = new MarsRover(1, 2, currentDirection);
@@ -202,6 +204,14 @@ public class MarsRover
         if (direction == Direction.South)
         {
             direction = Direction.East;
+        }
+        else if (direction == Direction.East)
+        {
+            direction = Direction.North;
+        }
+        else if(IsWestFacing())
+        {
+            direction = Direction.South;
         }
         else
         {
