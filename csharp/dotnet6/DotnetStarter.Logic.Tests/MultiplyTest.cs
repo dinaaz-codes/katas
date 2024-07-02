@@ -143,10 +143,7 @@ public class Number
         num += number2.Abs();
     }
 
-    private bool LessThan(Number number1)
-    {
-        return num < number1.Abs();
-    }
+    private bool LessThan(Number number1) => num < number1.Abs();
 
     private void Increment() => num++;
 
