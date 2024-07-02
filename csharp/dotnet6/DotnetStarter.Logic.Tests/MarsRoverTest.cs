@@ -136,7 +136,7 @@ public class MarsRover
     {
         if (IsNorthFacing())
             y += 1;
-        else if (direction == Direction.South)
+        else if (IsSouthFacing())
             y -= 1;
         else if (direction == Direction.West)
             x -= 1;
