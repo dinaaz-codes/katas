@@ -134,13 +134,18 @@ public class MarsRover
 
     public void MoveForward()
     {
-        if (direction == Direction.North)
+        if (IsNorthFacing())
             y += 1;
         else if (direction == Direction.South)
             y -= 1;
         else if (direction == Direction.West)
             x -= 1;
         else if (direction == Direction.East) x += 1;
+    }
+
+    private bool IsNorthFacing()
+    {
+        return direction == Direction.North;
     }
 
     public void MoveBackward()
@@ -155,7 +160,7 @@ public class MarsRover
             x += 1;
         }
         
-        if(direction == Direction.North)
+        if(IsNorthFacingNew())
         {
             y -= 1;
         }
@@ -164,6 +169,11 @@ public class MarsRover
         {
             x -= 1;
         }
+    }
+
+    private bool IsNorthFacingNew()
+    {
+        return direction == Direction.North;
     }
 }
 
