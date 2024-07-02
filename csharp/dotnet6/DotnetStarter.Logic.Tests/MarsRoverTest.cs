@@ -42,13 +42,22 @@ public class MarsRoverTest
     }
     
     [Fact]
-    public void ShouldMoveMarsRoverForward()
+    public void ShouldMoveMarsRoverForward_OnFacingNorth()
     {
         var marsRover = new MarsRover(1, 2, Direction.North);
         marsRover.MoveForward();
 
         var currentPosition = marsRover.CurrentPosition();
         Assert.Equal(3,currentPosition.y);
+    }
+    [Fact]
+    public void ShouldMoveMarsRoverForward_OnFacingSouth()
+    {
+        var marsRover = new MarsRover(1, 2, Direction.South);
+        marsRover.MoveForward();
+
+        var currentPosition = marsRover.CurrentPosition();
+        Assert.Equal(1,currentPosition.y);
     }
 }
 
@@ -74,6 +83,11 @@ public class MarsRover
         if (direction == Direction.North)
         {
             y += 1;
+        }
+
+        if (direction == Direction.South)
+        {
+            y -= 1;
         }
     }
 }
