@@ -134,21 +134,13 @@ public class MarsRover
 
     public void MoveForward()
     {
-        switch (direction)
-        {
-            case Direction.North:
-                y += 1;
-                break;
-            case Direction.South:
-                y -= 1;
-                break;
-            case Direction.West:
-                x -= 1;
-                break;
-            case Direction.East:
-                x+= 1;
-                break;
-        }
+        if (direction == Direction.North)
+            y += 1;
+        else if (direction == Direction.South)
+            y -= 1;
+        else if (direction == Direction.West)
+            x -= 1;
+        else if (direction == Direction.East) x += 1;
     }
 
     public void MoveBackward()
