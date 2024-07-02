@@ -104,6 +104,15 @@ public class MarsRoverTest
         var currentPosition = marsRover.CurrentPosition();
         Assert.Equal(2,currentPosition.x);
     }
+    [Fact]
+    public void ShouldMoveMarsRoverBackward_OnFacingEast()
+    {
+        var marsRover = new MarsRover(1, 2, Direction.East);
+        marsRover.MoveBackward();
+
+        var currentPosition = marsRover.CurrentPosition();
+        Assert.Equal(0,currentPosition.x);
+    }
 }
 
 public class MarsRover
@@ -157,6 +166,11 @@ public class MarsRover
         if(direction == Direction.North)
         {
             y -= 1;
+        }
+
+        if (direction == Direction.East)
+        {
+            x -= 1;
         }
     }
 }
