@@ -140,7 +140,7 @@ public class MarsRover
             y -= 1;
         else if (IsWestFacing())
             x -= 1;
-        else if (direction == Direction.East) x += 1;
+        else if (IsEastFacing()) x += 1;
     }
 
     private bool IsWestFacing()
