@@ -138,10 +138,7 @@ public class Number
         return num > 0;
     }
 
-    private void Add(Number number2)
-    {
-        num += number2.Abs();
-    }
+    private void Add(Number number2) => num += number2.Abs();
 
     private bool LessThan(Number number1) => num < number1.Abs();
 
