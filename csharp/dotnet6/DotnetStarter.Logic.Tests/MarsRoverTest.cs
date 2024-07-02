@@ -20,6 +20,19 @@ public class MarsRoverTest
         Assert.Equal(2,marsRover.y);
         Assert.Equal('N',marsRover.direction);
     }
+    
+    [Fact]
+    public void ShouldGetCurrentMarsRoversPosition()
+    {
+        // Arrange
+        var marsRover = new MarsRover(1, 2, 'N');
+        var position = marsRover.GetPosition();
+        Assert.NotNull(position);
+        Assert.Equal(1,position.x);
+        Assert.Equal(2,position.y);
+    }
+    
+    
 }
 
 public class MarsRover
@@ -34,4 +47,15 @@ public class MarsRover
         this.y = y;
         this.direction = direction;
     }
+
+    public Position GetPosition()
+    { 
+        return  new Position(x, y);
+    }
+}
+
+public record Position(int x, int y)
+{
+    public readonly int x = x;
+    public readonly int y = y;
 }
