@@ -18,7 +18,7 @@ public class MarsRoverTest
         
         Assert.Equal(1,marsRover.x);
         Assert.Equal(2,marsRover.y);
-        Assert.Equal('N',marsRover.direction);
+        Assert.Equal(Direction.North,marsRover.direction);
     }
     
     [Fact]
@@ -38,7 +38,7 @@ public class MarsRoverTest
         // Arrange
         var marsRover = new MarsRover(1, 2, 'N');
         var direction = marsRover.GetDirection();
-        Assert.Equal('N',direction);
+        Assert.Equal(Direction.North,direction);
     }
     
     
@@ -48,13 +48,13 @@ public class MarsRover
 {
     public int x;
     public int y;
-    public char direction;
+    public Direction direction;
 
     public MarsRover(int x, int y, char direction)
     {
         this.x = x;
         this.y = y;
-        this.direction = direction;
+        this.direction = (Direction)direction;
     }
 
     public Position GetPosition()
@@ -66,6 +66,14 @@ public class MarsRover
     {
         return direction;
     }
+}
+
+public enum Direction
+{
+    North = 'N',
+    South ='S',
+    East = 'E',
+    West = 'W'
 }
 
 public record Position(int x, int y)
