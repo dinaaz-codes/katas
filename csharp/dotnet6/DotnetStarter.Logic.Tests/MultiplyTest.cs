@@ -165,10 +165,7 @@ public class Number
         return result;
     }
 
-    private static Number Zero()
-    {
-        return new Number(0);
-    }
+    private static Number Zero() => new(0);
 
     public int AsInt()
     {
