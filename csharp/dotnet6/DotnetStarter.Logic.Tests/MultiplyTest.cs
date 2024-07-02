@@ -153,13 +153,7 @@ public class Number
 
 public record NegativeNumber
 {
-    public NegativeNumber(int number)
-    {
-        if(number < 0)
-            this.Number = number;
-        else
-            this.Number = -number;
-    }
+    public NegativeNumber(int number) => this.Number = number < 0 ? number : -number;
 
     private int Number { get; }
 
