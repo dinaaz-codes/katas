@@ -37,8 +37,6 @@ public class MarsRoverTest
         var direction = marsRover.GetDirection();
         Assert.Equal(Direction.North,direction);
     }
-    
-    
 }
 
 public class MarsRover
@@ -54,15 +52,9 @@ public class MarsRover
         this.direction = direction;
     }
 
-    public Position GetPosition()
-    { 
-        return  new Position(x, y);
-    }
+    public Position GetPosition() => new(x, y);
 
-    public Direction GetDirection()
-    {
-        return direction;
-    }
+    public Direction GetDirection() => direction;
 }
 
 public enum Direction
