@@ -215,8 +215,6 @@ public class MarsRover
         {
             direction = Direction.West;    
         }
-
-        
     }
 }
 
