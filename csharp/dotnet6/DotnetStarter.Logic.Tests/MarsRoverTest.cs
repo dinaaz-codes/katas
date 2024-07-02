@@ -160,7 +160,7 @@ public class MarsRover
             y += 1;
         }
 
-        if (direction == Direction.West)
+        if (IsWestFacing())
         {
             x += 1;
         }
